@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cachet-nodeport
+spec:
+  selector:
+      component: cachet
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 3000
+      nodePort: 30978
+    #- name: http
+     # protocol: TCP
+      #port: 80
+      #targetPort: 30978
+      
